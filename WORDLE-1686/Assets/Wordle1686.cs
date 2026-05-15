@@ -145,10 +145,8 @@ public class Wordle1686 : MonoBehaviour {
          if (LetCount[SubStr[i] + ""] > 0 && !Green[i]) {
             Yellow[i] = true;
             LetCount[SubStr[i]+""]--;
-            DebugTxt += "🟨"; 
          } else {
             Yellow[i] = false;
-            DebugTxt += "◻️";
          }
       }
    }
@@ -192,7 +190,7 @@ public class Wordle1686 : MonoBehaviour {
          }
          
       }
-      yield return new WaitForSeconds((float)0.8);
+      yield return new WaitForSeconds((float)1.1);
       AllowType = true;
    }
 
@@ -214,8 +212,8 @@ public class Wordle1686 : MonoBehaviour {
             DebugTxt += "🟩";
          } else if (Yellow[i]) {
             DebugTxt += "🟨"; 
-         } else if (!Green[SubStr.IndexOf(SubStr[i] + "")] && !Yellow[SubStr.IndexOf(SubStr[i] + "")]) {
-            
+         } else if (!Green[i] && !Yellow[i]) {
+            DebugTxt += "◻️";
          }
       }
    }
